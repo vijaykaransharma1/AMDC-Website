@@ -21,6 +21,25 @@ body {
   overflow-x: hidden;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+textarea,
+select {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 ::selection {
   background-color: rgba($color-gold, 0.3);
   color: $color-text-primary;

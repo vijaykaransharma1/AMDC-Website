@@ -163,6 +163,10 @@
   overflow: hidden;
   transition: border-color $transition-base;
 
+  @media (max-width: $bp-sm) {
+    padding: $space-lg $space-md;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -307,6 +311,10 @@
   border-radius: 2px;
   text-align: center;
   transition: border-color $transition-base, transform $transition-base;
+
+  @media (max-width: $bp-sm) {
+    padding: $space-lg $space-md;
+  }
 
   &:hover {
     border-color: $color-border-gold;

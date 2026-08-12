@@ -40,6 +40,10 @@
   max-width: 55ch;
   margin: 0 auto $space-3xl;
   line-height: 1.8;
+
+  @media (max-width: $bp-sm) {
+    margin-bottom: $space-xl;
+  }
 }
 
 .inner {
@@ -146,6 +150,11 @@
   transition: background $transition-base, transform $transition-fast, box-shadow $transition-base;
   align-self: flex-start;
 
+  @media (max-width: $bp-sm) {
+    align-self: stretch;
+    width: 100%;
+  }
+
   &:hover:not(:disabled) {
     background: $color-gold-light;
     transform: translateY(-2px);
@@ -205,6 +214,11 @@
   background: $color-surface;
   border: 1px solid $color-border;
   border-radius: 2px;
+
+  @media (max-width: $bp-sm) {
+    padding: $space-md;
+    gap: $space-lg;
+  }
 }
 
 .infoTitle {

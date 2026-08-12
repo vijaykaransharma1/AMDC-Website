@@ -68,9 +68,17 @@
   padding: 1.25rem $container-padding;
   border-bottom: 1px solid $color-border;
   flex-shrink: 0;
+  gap: 1rem;
+
+  @media (max-width: $bp-sm) {
+    padding: 1rem 1.25rem;
+  }
 }
 
 .meta {
+  flex: 1;
+  min-width: 0;
+
   .category {
     font-family: $font-sans;
     font-size: 0.65rem;
@@ -85,6 +93,9 @@
     font-size: clamp(1.2rem, 2.5vw, 1.8rem);
     font-weight: 400;
     color: $color-text-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     span {
       color: $color-text-secondary;

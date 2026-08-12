@@ -3,7 +3,7 @@
 .hero {
   position: relative;
   height: 100svh;
-  min-height: 700px;
+  min-height: 500px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -88,10 +88,16 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
   max-width: 50ch;
+  width: 100%;
   line-height: 1.8;
   margin-bottom: $space-xl;
   opacity: 0;
   transform: translateY(20px);
+
+  @media (max-width: $bp-sm) {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
 
   &.animate {
     animation: fadeUp 0.8s ease 0.8s forwards;
@@ -104,6 +110,12 @@
   flex-wrap: wrap;
   opacity: 0;
   transform: translateY(20px);
+
+  @media (max-width: $bp-sm) {
+    flex-direction: column;
+    gap: $space-sm;
+    width: 100%;
+  }
 
   &.animate {
     animation: fadeUp 0.8s ease 1s forwards;
@@ -122,6 +134,12 @@
   border-radius: 2px;
   transition: background $transition-base, transform $transition-fast, box-shadow $transition-base;
   cursor: pointer;
+  text-align: center;
+
+  @media (max-width: $bp-sm) {
+    width: 100%;
+    padding: 1rem;
+  }
 
   &:hover {
     background: $color-gold-light;
@@ -143,6 +161,12 @@
   border-radius: 2px;
   transition: border-color $transition-base, color $transition-base, transform $transition-fast;
   cursor: pointer;
+  text-align: center;
+
+  @media (max-width: $bp-sm) {
+    width: 100%;
+    padding: 1rem;
+  }
 
   &:hover {
     border-color: $color-gold;
@@ -161,6 +185,10 @@
   align-items: center;
   gap: 0.5rem;
   opacity: 0;
+
+  @media (max-width: $bp-sm) {
+    display: none;
+  }
 
   &.animate {
     animation: fadeIn 0.8s ease 1.4s forwards;
