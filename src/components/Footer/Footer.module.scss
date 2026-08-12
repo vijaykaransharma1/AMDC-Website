@@ -1,0 +1,145 @@
+@use '@/styles/variables' as *;
+
+.footer {
+  background: $color-bg-2;
+  border-top: 1px solid $color-border;
+}
+
+.main {
+  padding: clamp(3rem, 6vw, 5rem) $container-padding;
+  max-width: $container-max;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brand {
+  .logo {
+    font-family: $font-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: $color-text-primary;
+    margin-bottom: 1.25rem;
+    display: block;
+
+    span {
+      color: $color-gold;
+    }
+  }
+
+  p {
+    font-family: $font-sans;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: $color-text-muted;
+    line-height: 1.8;
+    max-width: 35ch;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  width: 36px;
+  height: 36px;
+  border: 1px solid $color-border;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-muted;
+  transition: all $transition-base;
+  font-size: 0.75rem;
+
+  &:hover {
+    border-color: $color-gold;
+    color: $color-gold;
+    background: rgba($color-gold, 0.08);
+  }
+}
+
+.col {
+  h4 {
+    font-family: $font-sans;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  li a,
+  li button {
+    font-family: $font-sans;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: $color-text-muted;
+    transition: color $transition-base;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+}
+
+.bottom {
+  border-top: 1px solid $color-border;
+  padding: 1.5rem $container-padding;
+  max-width: $container-max;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  p {
+    font-family: $font-sans;
+    font-size: 0.78rem;
+    color: $color-text-muted;
+    font-weight: 400;
+  }
+
+  .legal {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      font-family: $font-sans;
+      font-size: 0.78rem;
+      color: $color-text-muted;
+      font-weight: 400;
+      transition: color $transition-base;
+
+      &:hover {
+        color: $color-gold;
+      }
+    }
+  }
+}

@@ -1,0 +1,395 @@
+@use '@/styles/variables' as *;
+
+// Hero
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .bg {
+    position: absolute;
+    inset: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.62);
+  }
+
+  .heroContent {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 $container-padding;
+
+    .eyebrow {
+      font-family: $font-sans;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: $color-gold;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: $font-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.1;
+
+      em {
+        font-style: italic;
+        color: $color-gold;
+      }
+    }
+  }
+}
+
+// Sections
+.section {
+  padding: clamp(4rem, 8vw, 8rem) $container-padding;
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+.altBg {
+  background: $color-bg-2;
+
+  &>.section {
+    max-width: $container-max;
+  }
+}
+
+.eyebrow {
+  font-family: $font-sans;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-family: $font-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: $color-text-primary;
+  margin-bottom: $space-md;
+  line-height: 1.1;
+
+  em {
+    font-style: italic;
+    color: $color-gold-light;
+  }
+}
+
+.divider {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, $color-gold, transparent);
+  margin: $space-md 0 $space-lg;
+}
+
+.body {
+  font-family: $font-sans;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $color-text-secondary;
+  line-height: 1.9;
+  max-width: 65ch;
+}
+
+// Story Section
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.storyImage {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slower;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+}
+
+// Mission / Vision
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pillar {
+  padding: $space-xl;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color $transition-base;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: $color-gold;
+    transition: height $transition-slow;
+    border-radius: 0 0 2px 0;
+  }
+
+  &:hover {
+    border-color: $color-border-gold;
+
+    &::before {
+      height: 100%;
+    }
+  }
+
+  .pillarIcon {
+    width: 48px;
+    height: 48px;
+    background: rgba($color-gold, 0.1);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    margin-bottom: $space-md;
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-text-primary;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: $font-sans;
+    font-size: 0.92rem;
+    color: $color-text-secondary;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+}
+
+// Philosophy
+.philosophy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.philosophyImage {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 2px;
+  order: -1;
+
+  @media (max-width: $bp-lg) {
+    order: unset;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: $space-xl;
+}
+
+.principle {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+
+  .num {
+    font-family: $font-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $color-gold;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  .prinContent {
+    h4 {
+      font-family: $font-serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: $color-text-primary;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      font-family: $font-sans;
+      font-size: 0.9rem;
+      color: $color-text-secondary;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+  }
+}
+
+// Why Choose Us
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whyCard {
+  padding: $space-xl $space-lg;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 2px;
+  text-align: center;
+  transition: border-color $transition-base, transform $transition-base;
+
+  &:hover {
+    border-color: $color-border-gold;
+    transform: translateY(-4px);
+  }
+
+  .whyIcon {
+    font-family: $font-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: $color-gold;
+    margin-bottom: $space-md;
+    display: block;
+  }
+
+  h3 {
+    font-family: $font-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $color-text-primary;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-family: $font-sans;
+    font-size: 0.88rem;
+    color: $color-text-secondary;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+}
+
+// CTA
+.cta {
+  padding: clamp(4rem, 8vw, 7rem) $container-padding;
+  text-align: center;
+  background: linear-gradient(135deg, rgba($color-gold, 0.06) 0%, transparent 60%);
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  h2 {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    color: $color-text-primary;
+    margin-bottom: $space-md;
+    line-height: 1.15;
+
+    em {
+      font-style: italic;
+      color: $color-gold-light;
+    }
+  }
+
+  p {
+    font-family: $font-sans;
+    font-size: 1rem;
+    color: $color-text-secondary;
+    max-width: 55ch;
+    margin: 0 auto $space-xl;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: $font-sans;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-bg;
+  background: $color-gold;
+  padding: 1.1rem 3rem;
+  border-radius: 2px;
+  transition: background $transition-base, transform $transition-fast, box-shadow $transition-base;
+
+  &:hover {
+    background: $color-gold-light;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba($color-gold, 0.3);
+  }
+}

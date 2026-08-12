@@ -1,0 +1,107 @@
+// ==============================================
+// Global Styles
+// ==============================================
+
+@use 'variables' as *;
+@use 'reset';
+
+:root {
+  --color-bg: #{$color-bg};
+  --color-bg-2: #{$color-bg-2};
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-gold: #{$color-gold};
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text-primary;
+  font-family: $font-sans;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba($color-gold, 0.3);
+  color: $color-text-primary;
+}
+
+:focus-visible {
+  outline: 2px solid $color-gold;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-gold-dark;
+  border-radius: 3px;
+}
+
+// Container utility
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Gold gradient text utility
+.gold-text {
+  background: linear-gradient(135deg, $color-gold-light 0%, $color-gold 50%, $color-gold-dark 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Section label
+.section-label {
+  font-family: $font-sans;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $color-gold;
+}
+
+// Divider
+.divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, $color-gold, transparent);
+  margin: $space-md 0;
+}
+
+// Smooth image loading — handled per component
+img {
+  transition: opacity 0.4s ease;
+}
+
+// Lenis
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

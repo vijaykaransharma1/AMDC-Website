@@ -1,0 +1,158 @@
+@use '@/styles/variables' as *;
+
+.section {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: $color-bg-2;
+}
+
+.header {
+  padding: 0 $container-padding;
+  max-width: $container-max;
+  margin: 0 auto $space-3xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: $space-lg;
+}
+
+.headerLeft {
+  .eyebrow {
+    font-family: $font-sans;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    color: $color-text-primary;
+    line-height: 1.1;
+
+    em {
+      font-style: italic;
+      color: $color-gold-light;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter {
+  font-family: $font-sans;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all $transition-base;
+  background: transparent;
+
+  &:hover {
+    border-color: $color-gold;
+    color: $color-gold;
+  }
+
+  &.active {
+    background: $color-gold;
+    border-color: $color-gold;
+    color: $color-bg;
+  }
+}
+
+.grid {
+  padding: 0 $container-padding;
+  max-width: $container-max;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+// Masonry-like: make first card and 5th card tall
+.card:nth-child(1),
+.card:nth-child(5),
+.card:nth-child(9),
+.card:nth-child(13) {
+  @media (min-width: $bp-lg) {
+    grid-row: span 2;
+    aspect-ratio: unset;
+
+    article {
+      height: 100%;
+      aspect-ratio: unset;
+    }
+  }
+}
+
+// ── View All CTA (preview mode only) ────────────────
+.viewAllWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(2.5rem, 5vw, 4rem) $container-padding 0;
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+.viewAllMeta {
+  font-family: $font-sans;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: $color-text-muted;
+  text-transform: uppercase;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: $font-sans;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-bg;
+  background: $color-gold;
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  transition: background $transition-base, transform $transition-fast, box-shadow $transition-base;
+
+  svg {
+    transition: transform $transition-base;
+  }
+
+  &:hover {
+    background: $color-gold-light;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba($color-gold, 0.3);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+}

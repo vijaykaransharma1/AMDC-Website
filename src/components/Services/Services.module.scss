@@ -1,0 +1,293 @@
+@use '@/styles/variables' as *;
+
+// =============================================
+// Services Section
+// =============================================
+
+.section {
+  position: relative;
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: $color-bg;
+  overflow: hidden;
+}
+
+.bgAccent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba($color-gold, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// ─── Header ─────────────────────────────────
+.header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.eyebrow {
+  font-family: $font-sans;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: $font-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: $color-text-primary;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+
+  em {
+    font-style: italic;
+    color: $color-gold-light;
+  }
+}
+
+.subtitle {
+  font-family: $font-sans;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $color-text-secondary;
+  max-width: 55ch;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+// ─── Grid ────────────────────────────────────
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+// ─── Card ─────────────────────────────────────
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.55s ease var(--delay, 0ms),
+    transform 0.55s ease var(--delay, 0ms);
+
+  .section.visible & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardInner {
+  position: relative;
+  height: 100%;
+  padding: 2rem;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: default;
+  transition: border-color $transition-base, background $transition-base,
+    transform $transition-slow;
+
+  &:hover {
+    border-color: $color-border-gold;
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateY(-4px);
+
+    .iconGlow {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .cardAccent {
+      opacity: 1;
+    }
+  }
+}
+
+// Gold corner accent line
+.cardAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, $color-gold, transparent);
+  opacity: 0;
+  transition: opacity $transition-base;
+}
+
+// ─── Icon ─────────────────────────────────────
+.iconWrap {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  line-height: 56px;
+  display: block;
+  text-align: center;
+  width: 56px;
+  height: 56px;
+  background: rgba($color-gold, 0.08);
+  border: 1px solid $color-border-gold;
+  border-radius: 4px;
+}
+
+.iconGlow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba($color-gold, 0.2), transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity $transition-slow, transform $transition-slow;
+}
+
+// ─── Card Body ────────────────────────────────
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cardEyebrow {
+  font-family: $font-sans;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $color-gold;
+}
+
+.cardTitle {
+  font-family: $font-serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 400;
+  color: $color-text-primary;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-family: $font-sans;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: $color-text-secondary;
+  line-height: 1.75;
+  flex: 1;
+}
+
+// ─── Tags ─────────────────────────────────────
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  font-family: $font-sans;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  background: transparent;
+  transition: border-color $transition-base, color $transition-base;
+
+  .cardInner:hover & {
+    border-color: $color-border-gold;
+    color: $color-gold;
+  }
+}
+
+// ─── CTA ─────────────────────────────────────
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
+  background: $color-surface;
+  border: 1px solid $color-border-gold;
+  border-radius: 2px;
+
+  @media (max-width: $bp-sm) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+}
+
+.ctaText {
+  font-family: $font-serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  color: $color-text-primary;
+  line-height: 1.4;
+}
+
+.ctaBtn {
+  flex-shrink: 0;
+  font-family: $font-sans;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-bg;
+  background: $color-gold;
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background $transition-base, transform $transition-fast,
+    box-shadow $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    background: $color-gold-light;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba($color-gold, 0.3);
+  }
+}
