@@ -1,7 +1,7 @@
 @use '@/styles/variables' as *;
 
 .section {
-  padding: clamp(5rem, 10vw, 9rem) $container-padding;
+  padding: clamp(3.5rem, 6vw, 6rem) $container-padding;
   max-width: $container-max;
   margin: 0 auto;
   overflow: hidden;
@@ -52,7 +52,7 @@
   bottom: 2rem;
   right: 1.5rem;
   background: $color-gold;
-  color: $color-bg;
+  color: #ffffff;
   padding: 1.5rem;
   text-align: center;
   z-index: 2;

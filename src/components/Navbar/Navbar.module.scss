@@ -135,10 +135,10 @@
 .cta {
   font-family: $font-sans;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $color-bg;
+  color: #ffffff;
   background: $color-gold;
   padding: 0.6rem 1.4rem;
   border-radius: 2px;
@@ -146,6 +146,7 @@
 
   &:hover {
     background: $color-gold-light;
+    color: #ffffff;
     transform: translateY(-1px);
   }
 
@@ -273,10 +274,10 @@
 .mobileCta {
   font-family: $font-sans;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: $color-bg;
+  color: #ffffff;
   background: $color-gold;
   padding: 0.9rem 2.5rem;
   border-radius: 2px;
@@ -293,7 +294,7 @@
 
   &:hover {
     background: $color-gold-light;
-    color: $color-bg;
+    color: #ffffff;
     transform: translateY(-2px);
   }
 }

@@ -17,6 +17,8 @@ export default function Footer() {
           <Link to="/" className={styles.logo} aria-label="AMDC Home">
             AMDC<span>.</span>
           </Link>
+          <span className={styles.tagline}>Ashish Maan Design Company</span>
+          <div className={styles.divider} aria-hidden="true" />
           <p>
             Architecture • Space Planner • Interior Designers<br />
             Designing living spaces and Events since 2014.
@@ -86,3 +88,4 @@ export default function Footer() {
     </footer>
   );
 }
+

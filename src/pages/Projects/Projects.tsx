@@ -8,7 +8,7 @@ import styles from './Projects.module.scss';
 
 const ProjectModal = lazy(() => import('@/components/ProjectModal/ProjectModal'));
 
-const categories = ['All', 'Residential', 'Commercial', 'Hospitality'];
+const categories = ['All', 'Residential', 'Commercial', 'Hospitality', 'Cultural & Institutional'];
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -36,7 +36,7 @@ export default function Projects() {
         <section className={styles.hero} aria-labelledby="projects-hero-title">
           <div className={styles.heroBg} aria-hidden="true">
             <img
-              src="/images/amdcprojects/Residence terrace view 1 (7).jpg"
+              src="/images/amdcprojects/final website project images/Residential/terrace design sec 57 ggn/Residence terrace view 1 (7).jpg"
               alt="AMDC project portfolio"
             />
           </div>

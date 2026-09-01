@@ -55,6 +55,7 @@
   margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(20px);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 
   &.animate {
     animation: fadeUp 0.8s ease 0.4s forwards;
@@ -71,10 +72,13 @@
   max-width: 12ch;
   opacity: 0;
   transform: translateY(30px);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 
   em {
     font-style: italic;
     color: $color-gold;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7),
+                 0 0 40px rgba(0, 0, 0, 0.4);
   }
 
   &.animate {
@@ -125,10 +129,10 @@
 .btnPrimary {
   font-family: $font-sans;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $color-bg;
+  color: #ffffff;
   background: $color-gold;
   padding: 1rem 2.5rem;
   border-radius: 2px;
@@ -143,8 +147,9 @@
 
   &:hover {
     background: $color-gold-light;
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba($color-gold, 0.3);
+    box-shadow: 0 8px 30px rgba($color-gold, 0.45);
   }
 }
 

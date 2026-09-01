@@ -38,3 +38,9 @@ logs/
 # Cache
 .cache/
 .parcel-cache/
+
+# Large raw image files (exceed GitHub's 100MB limit)
+*.tif
+*.tiff
+*.psd
+*.raw

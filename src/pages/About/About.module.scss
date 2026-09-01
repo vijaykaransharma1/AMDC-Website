@@ -41,6 +41,7 @@
       text-transform: uppercase;
       color: $color-gold;
       margin-bottom: 1rem;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
     }
 
     h1 {
@@ -49,10 +50,12 @@
       font-weight: 400;
       color: #ffffff;
       line-height: 1.1;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 
       em {
         font-style: italic;
         color: $color-gold;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
       }
     }
   }
@@ -143,7 +146,7 @@
   }
 }
 
-// Mission / Vision
+// Mission / Vision (kept for reference, replaced by founder section)
 .pillars {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -153,6 +156,135 @@
     grid-template-columns: 1fr;
   }
 }
+
+// ─── Founder Section ─────────────────────────
+.founderLayout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: flex-start;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.founderImageWrap {
+  position: relative;
+  flex-shrink: 0;
+
+  @media (max-width: $bp-lg) {
+    max-width: 380px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.founderPhoto {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+  display: block;
+  filter: grayscale(15%);
+  transition: filter $transition-slow;
+
+  &:hover {
+    filter: grayscale(0%);
+  }
+}
+
+.founderBadge {
+  position: absolute;
+  bottom: 1.5rem;
+  right: -1.25rem;
+  background: $color-gold;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+
+  @media (max-width: $bp-lg) {
+    right: 1rem;
+  }
+}
+
+.badgeYear {
+  display: block;
+  font-family: $font-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.badgeLabel {
+  display: block;
+  font-family: $font-sans;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.88;
+}
+
+.founderContent {
+  padding-top: 0.5rem;
+}
+
+.founderName {
+  font-family: $font-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  color: $color-text-primary;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.founderRole {
+  font-family: $font-sans;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: 0;
+}
+
+.founderStats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid $color-border;
+  flex-wrap: wrap;
+}
+
+.founderStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.statNum {
+  font-family: $font-serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: $color-gold;
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: $font-sans;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+}
+
 
 .pillar {
   padding: $space-xl;
@@ -386,18 +518,18 @@
   gap: 0.75rem;
   font-family: $font-sans;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $color-bg;
+  color: #ffffff;
   background: $color-gold;
   padding: 1.1rem 3rem;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: background $transition-base, transform $transition-fast, box-shadow $transition-base;
 
   &:hover {
     background: $color-gold-light;
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba($color-gold, 0.3);
+    box-shadow: 0 8px 30px rgba($color-gold, 0.45);
   }
 }

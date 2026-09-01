@@ -12,12 +12,12 @@ export default function AboutPreview() {
         {/* Image */}
         <div className={styles.imageWrap}>
           <img
-            src="/images/amdcprojects/TARUN LIVING view  (1).jpg"
+            src="/images/amdcprojects/final website project images/Residential/tarun/TARUN LIVING view  (1).jpg"
             alt="AMDC design studio workspace"
             loading="lazy"
           />
           <div className={styles.badge} aria-label="15 years of excellence">
-            <span className={styles.number}>15+</span>
+            <span className={styles.number}>12+</span>
             <span className={styles.label}>Years of<br />Excellence</span>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function AboutPreview() {
               <span className={styles.statLabel}>Projects</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNum}>15+</span>
+              <span className={styles.statNum}>12+</span>
               <span className={styles.statLabel}>Years</span>
             </div>
             <div className={styles.stat}>

@@ -27,16 +27,17 @@
   animation: fadeUp 0.8s ease 0.2s forwards;
 
   span {
-    color: #b8893a;
+    color: #C4914A;
   }
 }
 
 .bar {
   width: 200px;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.12);
+  height: 2px;
+  background: rgba(0, 0, 0, 0.10);
   position: relative;
   overflow: hidden;
+  border-radius: 2px;
 
   &::after {
     content: '';
@@ -45,7 +46,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, #b8893a, transparent);
+    background: linear-gradient(90deg, transparent, #C4914A, transparent);
     animation: slide 1.5s ease 0.5s infinite;
   }
 }
@@ -54,7 +55,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.3em;
-  color: #b8893a;
+  color: #C4914A;
   opacity: 0;
   animation: fadeIn 0.5s ease 0.5s forwards;
 }

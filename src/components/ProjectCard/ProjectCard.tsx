@@ -32,9 +32,8 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
       />
       <div className={styles.overlay} aria-hidden="true" />
       <div className={styles.content}>
-        <p className={styles.category}>{project.category} · {project.year}</p>
+        <p className={styles.category}>{project.category}</p>
         <h3 className={styles.title}>{project.title}</h3>
-        <p className={styles.subtitle}>{project.subtitle}</p>
       </div>
       <div className={styles.arrow} aria-hidden="true">
         <ArrowUpRight size={18} />

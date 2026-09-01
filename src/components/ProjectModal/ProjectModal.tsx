@@ -52,11 +52,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className={styles.header}>
           <div className={styles.meta}>
             <p className={styles.category}>
-              {project.category} · {project.location} · {project.year}
+              {project.category}
             </p>
             <h2 className={styles.title}>
               {project.title}
-              <span>— {project.subtitle}</span>
             </h2>
           </div>
           <div className={styles.controls}>
@@ -102,7 +101,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Footer */}
         <div className={styles.footer}>
-          <p>{project.description}</p>
         </div>
       </div>
     </div>

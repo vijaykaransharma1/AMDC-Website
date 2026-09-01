@@ -32,8 +32,8 @@ const whyCards = [
   },
   {
     icon: '★',
-    title: '15+ Years Expertise',
-    desc: 'Over a decade and a half of crafting extraordinary spaces across India gives us unmatched depth of experience.',
+    title: '12+ Years Expertise',
+    desc: 'Over a decade of crafting extraordinary spaces across India gives us unmatched depth of experience.',
   },
 ];
 
@@ -74,7 +74,7 @@ export default function About() {
         <section className={styles.hero} aria-labelledby="about-hero-title">
           <div className={styles.bg} aria-hidden="true">
             <img
-              src="/images/amdcprojects/Residence terrace view 1 (4).jpg"
+              src="/images/amdcprojects/final website project images/Residential/terrace design sec 57 ggn/Residence terrace view 1 (4).jpg"
               alt="AMDC studio interior"
             />
           </div>
@@ -95,34 +95,34 @@ export default function About() {
         >
           <div className={styles.story}>
             <div>
-              <p className={styles.eyebrow}>Since 2009</p>
+              <p className={styles.eyebrow}>Since 2014</p>
               <h2 className={styles.sectionTitle} id="story-title">
                 Born from a <em>Belief</em><br />in Great Design
               </h2>
               <div className={styles.divider} aria-hidden="true" />
               <p className={styles.body}>
-                AMDC Ashish Maan Design Company was founded in 2014 with a singular conviction: 
-                that every person deserves to live and work in a beautifully designed space. 
-                What began as a boutique studio in Hyderabad has grown into one of India's 
+                AMDC Ashish Maan Design Company was founded in 2014 with a singular conviction:
+                that every person deserves to live and work in a beautifully designed space.
+                What began as a boutique studio has grown into one of India's
                 most respected interior design firms.
               </p>
               <br />
               <p className={styles.body}>
-                Over 15 years, we have had the privilege of transforming private residences, 
-                corporate headquarters, boutique hotels, and flagship retail environments. 
-                Each project has refined our craft and deepened our understanding of how 
+                Over 12 years, we have had the privilege of transforming private residences,
+                corporate headquarters, boutique hotels, and flagship retail environments.
+                Each project has refined our craft and deepened our understanding of how
                 design profoundly shapes human experience.
               </p>
               <br />
               <p className={styles.body}>
-                Today, our team of architects, designers, and project managers brings together 
-                decades of collective expertise—united by an uncompromising commitment to 
+                Today, our team of architects, designers, and project managers brings together
+                decades of collective expertise—united by an uncompromising commitment to
                 quality, originality, and client satisfaction.
               </p>
             </div>
             <div className={styles.storyImage}>
               <img
-                src="/images/amdcprojects/TARUN LIVING view  (1).jpg"
+                src="/images/amdcprojects/final website project images/Residential/Raghav ggn/Raghav drawing room (4).jpg"
                 alt="AMDC design team at work"
                 loading="lazy"
               />
@@ -130,42 +130,76 @@ export default function About() {
           </div>
         </section>
 
-        {/* Mission & Vision */}
+        {/* Founder Section */}
         <div className={styles.altBg}>
           <section
-            aria-labelledby="mission-title"
+            aria-labelledby="founder-title"
             style={{ padding: 'clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem)', maxWidth: '1400px', margin: '0 auto' }}
           >
-            <p className={styles.eyebrow} style={{ textAlign: 'center' }}>What Drives Us</p>
+            <p className={styles.eyebrow} style={{ textAlign: 'center' }}>The Visionary Behind AMDC</p>
             <h2
               className={styles.sectionTitle}
-              id="mission-title"
-              style={{ textAlign: 'center', margin: '0 auto 3rem', maxWidth: '40ch' }}
+              id="founder-title"
+              style={{ textAlign: 'center', margin: '0 auto 3.5rem', maxWidth: '40ch' }}
             >
-              Our <em>Mission</em> & Vision
+              Meet Our <em>Founder</em>
             </h2>
 
-            <div className={styles.pillars}>
-              <div className={styles.pillar}>
-                <div className={styles.pillarIcon} aria-hidden="true">M</div>
-                <h3>Our Mission</h3>
-                <p>
-                  To create interiors that are not merely beautiful, but deeply personal—spaces 
-                  that reflect the unique character of each client and stand the test of time. 
-                  We are committed to delivering excellence without compromise in every project 
-                  we undertake, regardless of scale.
-                </p>
+            <div className={styles.founderLayout}>
+              <div className={styles.founderImageWrap}>
+                <img
+                  src="/images/founder.jpg"
+                  alt="Ashish Maan — Founder & Principal Designer, AMDC"
+                  loading="lazy"
+                  className={styles.founderPhoto}
+                />
+                <div className={styles.founderBadge}>
+                  <span className={styles.badgeYear}>Est. 2014</span>
+                  <span className={styles.badgeLabel}>12+ Years of Excellence</span>
+                </div>
               </div>
 
-              <div className={styles.pillar}>
-                <div className={styles.pillarIcon} aria-hidden="true">V</div>
-                <h3>Our Vision</h3>
-                <p>
-                  To be India's most trusted luxury interior design studio—known not just for 
-                  beautiful spaces, but for the transformative relationships we build with our 
-                  clients. We envision a world where exceptional design is accessible to all 
-                  who seek it.
+              <div className={styles.founderContent}>
+                <p className={styles.founderName}>Ashish Maan</p>
+                <p className={styles.founderRole}>Founder &amp; Principal Designer</p>
+                <div className={styles.divider} aria-hidden="true" />
+
+                <p className={styles.body}>
+                  Ashish Maan is the creative force and strategic mind behind AMDC. With a
+                  distinguished career spanning over 15 years in luxury interior design,
+                  Ashish has built a reputation for crafting spaces that are simultaneously
+                  breathtaking and deeply livable.
                 </p>
+                <br />
+                <p className={styles.body}>
+                  Trained at one of India's premier design institutions, Ashish developed
+                  his signature philosophy early on: that great design must be rooted in
+                  the story of the person who inhabits the space. This belief has guided
+                  every project AMDC has delivered—from intimate residences to landmark
+                  commercial developments across Gurugram and beyond.
+                </p>
+                <br />
+                <p className={styles.body}>
+                  Under his leadership, AMDC has grown into a multidisciplinary studio
+                  known for its seamless blend of heritage craftsmanship and contemporary
+                  sensibility. Ashish continues to personally oversee each project, ensuring
+                  that the AMDC standard of excellence is never compromised.
+                </p>
+
+                <div className={styles.founderStats}>
+                  <div className={styles.founderStat}>
+                    <span className={styles.statNum}>150+</span>
+                    <span className={styles.statLabel}>Projects Delivered</span>
+                  </div>
+                  <div className={styles.founderStat}>
+                    <span className={styles.statNum}>12+</span>
+                    <span className={styles.statLabel}>Years of Expertise</span>
+                  </div>
+                  <div className={styles.founderStat}>
+                    <span className={styles.statNum}>12+</span>
+                    <span className={styles.statLabel}>Cities Served</span>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -184,8 +218,8 @@ export default function About() {
               </h2>
               <div className={styles.divider} aria-hidden="true" />
               <p className={styles.body}>
-                Great interior design is not about filling rooms with expensive furniture. 
-                It is about understanding people—their rhythms, their stories, their dreams—and 
+                Great interior design is not about filling rooms with expensive furniture.
+                It is about understanding people—their rhythms, their stories, their dreams—and
                 translating that understanding into spaces that feel inevitable.
               </p>
 
@@ -206,7 +240,7 @@ export default function About() {
 
             <div className={styles.philosophyImage}>
               <img
-                src="/images/amdcprojects/Outdoor walkway 2 ps 1 (4).jpg"
+                src="/images/amdcprojects/final website project images/Commercial/honda plant walkway/Outdoor walkway 2 ps 1 (4).jpg"
                 alt="Design philosophy in practice"
                 loading="lazy"
               />
@@ -247,7 +281,7 @@ export default function About() {
             Ready to Create<br />Something <em>Extraordinary</em>?
           </h2>
           <p>
-            Let's start with a conversation about your vision. 
+            Let's start with a conversation about your vision.
             Our team is ready to listen, inspire, and deliver.
           </p>
           <Link to="/#contact" className={styles.ctaBtn} aria-label="Enquire about our services">

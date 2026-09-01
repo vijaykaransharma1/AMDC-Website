@@ -34,7 +34,7 @@ export default function Hero() {
       <div className={styles.bg} aria-hidden="true">
         <img
           ref={bgRef}
-          src="/images/amdcprojects/Hero.jpg"
+          src="/images/amdcprojects/final website project images/Residential/terrace design sec 57 ggn/Residence terrace view 1 (9).jpg"
           alt="Luxury interior design"
         />
       </div>
@@ -42,13 +42,13 @@ export default function Hero() {
 
       <div className={styles.content}>
         <p className={`${styles.eyebrow} ${animate ? styles.animate : ''}`}>
-          Interior Design Studio
+          Interior Design Studio Gurgaon
         </p>
         <h1 className={`${styles.title} ${animate ? styles.animate : ''}`}>
           Where Space<br />Becomes <em>Art</em>
         </h1>
         <p className={`${styles.subtitle} ${animate ? styles.animate : ''}`}>
-          We craft extraordinary interiors that transcend the ordinary—spaces where luxury, 
+          We craft extraordinary interiors that transcend the ordinary—spaces where luxury,
           function, and emotion exist in perfect harmony.
         </p>
         <div className={`${styles.actions} ${animate ? styles.animate : ''}`}>

@@ -9,7 +9,7 @@ import styles from './ProjectGrid.module.scss';
 // Lazy load modal
 const ProjectModal = lazy(() => import('@/components/ProjectModal/ProjectModal'));
 
-const categories = ['All', 'Residential', 'Commercial', 'Hospitality'];
+const categories = ['All', 'Residential', 'Commercial', 'Hospitality', 'Cultural & Institutional'];
 
 interface ProjectGridProps {
   /** When true: shows first 6 projects + "View All" CTA. No filter tabs. */

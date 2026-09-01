@@ -3,17 +3,19 @@ import styles from './Services.module.scss';
 
 interface Service {
   id: number;
-  icon: string;
+  image: string;
   title: string;
   subtitle: string;
   description: string;
   tags: string[];
 }
 
+const BASE_IMG = '/images/amdcprojects/final website project images';
+
 const SERVICES: Service[] = [
   {
     id: 1,
-    icon: '🏠',
+    image: `${BASE_IMG}/Residential/tarun/TARUN LIVING view  (1).jpg`,
     title: 'Residential Design',
     subtitle: 'Luxury Living Spaces',
     description:
@@ -22,7 +24,7 @@ const SERVICES: Service[] = [
   },
   {
     id: 2,
-    icon: '🏢',
+    image: `${BASE_IMG}/Commercial/honda office/honda meeting room 1 (1).jpg`,
     title: 'Commercial Design',
     subtitle: 'Inspiring Workplaces',
     description:
@@ -31,7 +33,7 @@ const SERVICES: Service[] = [
   },
   {
     id: 3,
-    icon: '🏨',
+    image: `${BASE_IMG}/Hospitality/radisson/Radisson view 1 (1).jpg`,
     title: 'Hospitality Design',
     subtitle: 'Memorable Experiences',
     description:
@@ -40,7 +42,7 @@ const SERVICES: Service[] = [
   },
   {
     id: 4,
-    icon: '📐',
+    image: `${BASE_IMG}/Residential/m-94/M-94 LIVING ROOM view 2.jpg`,
     title: 'Space Planning',
     subtitle: 'Optimised Layouts',
     description:
@@ -49,7 +51,7 @@ const SERVICES: Service[] = [
   },
   {
     id: 5,
-    icon: '🪑',
+    image: `${BASE_IMG}/Residential/Raghav ggn/Raghav drawing room (5).jpg`,
     title: 'FF&E Sourcing',
     subtitle: 'Curated Furnishings',
     description:
@@ -58,7 +60,7 @@ const SERVICES: Service[] = [
   },
   {
     id: 6,
-    icon: '🎨',
+    image: `${BASE_IMG}/Residential/terrace design sec 57 ggn/Residence terrace view 1 (7).jpg`,
     title: 'Turnkey Projects',
     subtitle: 'End-to-End Delivery',
     description:
@@ -98,9 +100,9 @@ export default function Services() {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <p className={styles.eyebrow}>What We Offer</p>
+          <p className={styles.eyebrow}>What We Do</p>
           <h2 className={styles.title} id="services-title">
-            Our <em>Services</em>
+            Crafting Spaces That <em>Tell Your Story</em>
           </h2>
           <p className={styles.subtitle}>
             A comprehensive suite of interior design disciplines—each delivered
@@ -119,12 +121,19 @@ export default function Services() {
               aria-label={service.title}
             >
               <div className={styles.cardInner}>
-                <div className={styles.iconWrap} aria-hidden="true">
-                  <span className={styles.icon}>{service.icon}</span>
-                  <div className={styles.iconGlow} />
+                {/* Image */}
+                <div className={styles.imageWrap} aria-hidden="true">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className={styles.cardImage}
+                    loading="lazy"
+                  />
+                  <div className={styles.imageOverlay} />
                 </div>
 
-                <div className={styles.cardBody}>
+                {/* Content overlay */}
+                <div className={styles.cardContent}>
                   <p className={styles.cardEyebrow}>{service.subtitle}</p>
                   <h3 className={styles.cardTitle}>{service.title}</h3>
                   <p className={styles.cardDesc}>{service.description}</p>
@@ -155,6 +164,7 @@ export default function Services() {
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
             }
             aria-label="Get a free consultation"
+            id="services-cta-btn"
           >
             Get a Free Consultation
           </button>
