@@ -49,24 +49,6 @@ const SERVICES: Service[] = [
       'We reimagine your floor plan for maximum flow, natural light, and spatial efficiency—ensuring every square foot feels intentional and beautiful.',
     tags: ['Floor Plans', 'Zoning', '3D Modelling'],
   },
-  {
-    id: 5,
-    image: `${BASE_IMG}/Residential/Raghav ggn/Raghav drawing room (5).jpg`,
-    title: 'FF&E Sourcing',
-    subtitle: 'Curated Furnishings',
-    description:
-      'Our global sourcing network gives you access to the finest furniture, fixtures, and equipment—handpicked to complement your bespoke interior.',
-    tags: ['Furniture', 'Fixtures', 'Accessories'],
-  },
-  {
-    id: 6,
-    image: `${BASE_IMG}/Residential/terrace design sec 57 ggn/Residence terrace view 1 (7).jpg`,
-    title: 'Turnkey Projects',
-    subtitle: 'End-to-End Delivery',
-    description:
-      'From concept and design to construction supervision and styling, we manage every phase so you receive a flawless finished space on time.',
-    tags: ['Concept', 'Execution', 'Styling'],
-  },
 ];
 
 export default function Services() {
