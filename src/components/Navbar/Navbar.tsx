@@ -82,7 +82,11 @@ export default function Navbar() {
             aria-label="AMDC Home"
             onClick={handleLogoClick}
           >
-            AMDC<span>.</span>
+            <img
+              src="/images/logo transpranet.png"
+              alt="AMDC – Ashish Maan Design Company"
+              className={styles.logoImg}
+            />
           </a>
 
           {/* Desktop nav */}

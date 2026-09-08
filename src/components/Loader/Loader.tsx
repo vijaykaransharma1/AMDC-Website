@@ -29,7 +29,11 @@ export default function Loader({ onComplete }: LoaderProps) {
   return (
     <div className={`${styles.loader} ${hidden ? styles.hidden : ''}`} role="status" aria-label="Loading">
       <div className={styles.logo}>
-        AMDC<span>.</span>
+        <img
+          src="/images/logo transpranet.png"
+          alt="AMDC"
+          className={styles.logoImg}
+        />
       </div>
       <div className={styles.bar} aria-hidden="true" />
       <span className={styles.percent}>{percent}%</span>

@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Hero from '@/components/Hero/Hero';
-import AboutPreview from '@/components/AboutPreview/AboutPreview';
 import Services from '@/components/Services/Services';
 import ProjectGrid from '@/components/ProjectGrid/ProjectGrid';
+import Testimonials from '@/components/Testimonials/Testimonials';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import Footer from '@/components/Footer/Footer';
 
@@ -44,9 +44,9 @@ export default function Home() {
 
       <main>
         <Hero />
-        <AboutPreview />
         <Services />
         <ProjectGrid preview />
+        <Testimonials />
         <ContactForm />
       </main>
       <Footer />

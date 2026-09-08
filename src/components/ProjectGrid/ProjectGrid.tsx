@@ -17,12 +17,22 @@ interface ProjectGridProps {
   previewCount?: number;
 }
 
+// IDs of the 6 projects to feature on the homepage, in display order
+const PREVIEW_IDS = [
+  'restaurant',
+  'langeshwar-orissa',
+  'container-home-orissa-farm-house',
+  'raghav-ggn',
+  'ild-office-ggn',
+  'auditorium-honda',
+] as const;
+
 export default function ProjectGrid({ preview = false, previewCount = 7 }: ProjectGridProps) {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filtered = preview
-    ? projects.slice(0, previewCount)
+    ? PREVIEW_IDS.map((id) => projects.find((p) => p.id === id)).filter(Boolean) as Project[]
     : activeCategory === 'All'
     ? projects
     : projects.filter((p) => p.category === activeCategory);
@@ -68,7 +78,7 @@ export default function ProjectGrid({ preview = false, previewCount = 7 }: Proje
       {preview && (
         <div className={styles.viewAllWrap}>
           <p className={styles.viewAllMeta}>
-            Showing {previewCount} of {projects.length} projects
+            Showing {PREVIEW_IDS.length} of {projects.length} projects
           </p>
           <Link to="/projects" className={styles.viewAllBtn} aria-label="View all projects">
             View All Projects

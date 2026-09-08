@@ -42,12 +42,12 @@ const SERVICES: Service[] = [
   },
   {
     id: 4,
-    image: `${BASE_IMG}/Residential/m-94/M-94 LIVING ROOM view 2.jpg`,
-    title: 'Space Planning',
-    subtitle: 'Optimised Layouts',
+    image: `${BASE_IMG}/cultural&institutional/Auditorium honda/Honda AuditoriumVIEW  1.jpg`,
+    title: 'Cultural & Institutional',
+    subtitle: 'Purpose-Built Spaces',
     description:
-      'We reimagine your floor plan for maximum flow, natural light, and spatial efficiency—ensuring every square foot feels intentional and beautiful.',
-    tags: ['Floor Plans', 'Zoning', '3D Modelling'],
+      'From auditoriums and museums to meditation centres and community halls, we design institutional spaces that inspire, educate, and bring people together.',
+    tags: ['Auditoriums', 'Museums', 'Institutions'],
   },
 ];
 
@@ -82,9 +82,9 @@ export default function Services() {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <p className={styles.eyebrow}>What We Do</p>
-          <h2 className={styles.title} id="services-title">
-            Crafting Spaces That <em>Tell Your Story</em>
+          <p className={styles.eyebrow}>Our Services</p>
+          <h2 className={styles.sectionTitle} id="services-title">
+            What We Do
           </h2>
           <p className={styles.subtitle}>
             A comprehensive suite of interior design disciplines—each delivered

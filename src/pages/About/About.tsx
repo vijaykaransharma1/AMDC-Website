@@ -188,7 +188,7 @@ export default function About() {
 
                 <div className={styles.founderStats}>
                   <div className={styles.founderStat}>
-                    <span className={styles.statNum}>150+</span>
+                    <span className={styles.statNum}>100+</span>
                     <span className={styles.statLabel}>Projects Delivered</span>
                   </div>
                   <div className={styles.founderStat}>
@@ -248,31 +248,31 @@ export default function About() {
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <div className={styles.altBg}>
-          <section
-            aria-labelledby="why-title"
-            style={{ padding: 'clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem)', maxWidth: '1400px', margin: '0 auto' }}
-          >
-            <p className={styles.eyebrow} style={{ textAlign: 'center' }}>Why AMDC</p>
-            <h2
-              className={styles.sectionTitle}
-              id="why-title"
-              style={{ textAlign: 'center', margin: '0 auto 3rem', maxWidth: '40ch' }}
-            >
-              What Sets Us <em>Apart</em>
-            </h2>
+        {/* Why Choose Us — full-bleed dark section */}
+        <div className={styles.whySection}>
+          <div className={styles.whySectionInner}>
+            <div className={styles.whyHeader}>
+              <p className={styles.whyEyebrow}>Why AMDC</p>
+              <h2 className={styles.whyTitle} id="why-title">
+                What Sets Us <em>Apart</em>
+              </h2>
+              <p className={styles.whySubtitle}>
+                Over a decade of designing spaces that matter — here's what makes every AMDC project exceptional.
+              </p>
+            </div>
 
             <div className={styles.whyGrid}>
               {whyCards.map((card, i) => (
                 <div className={styles.whyCard} key={i}>
-                  <span className={styles.whyIcon} aria-hidden="true">{card.icon}</span>
-                  <h3>{card.title}</h3>
-                  <p>{card.desc}</p>
+                  <span className={styles.whyNum}>0{i + 1}</span>
+                  <div className={styles.whyCardInner}>
+                    <h3>{card.title}</h3>
+                    <p>{card.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </section>
+          </div>
         </div>
 
         {/* CTA */}

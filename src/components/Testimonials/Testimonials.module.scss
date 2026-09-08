@@ -1,0 +1,222 @@
+@use '@/styles/variables' as *;
+
+.section {
+  padding: clamp(4rem, 7vw, 7rem) 0;
+  background: $color-bg;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle background texture
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at 30% 50%,
+      rgba(0, 0, 0, 0.03) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// ─── Header ──────────────────────────────────────────────────────────────────
+.header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.eyebrow {
+  font-family: $font-sans;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: $font-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: $color-text-primary;
+  line-height: 1.15;
+
+  em {
+    font-style: italic;
+    color: #111111;
+  }
+}
+
+// ─── Swiper Container ──────────────────────────────────────────────────────────
+.swiperContainer {
+  margin-bottom: 3rem;
+  padding-bottom: 0.5rem; /* Space for box-shadow on hover */
+  padding-top: 0.5rem;
+}
+
+// ─── Card ────────────────────────────────────────────────────────────────────
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 4px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.55s ease var(--delay, 0ms),
+    transform 0.55s ease var(--delay, 0ms),
+    box-shadow $transition-slow;
+
+  .section.visible & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.10);
+    transform: translateY(-4px);
+    border-color: rgba(0, 0, 0, 0.12);
+  }
+}
+
+// ─── Quote icon ──────────────────────────────────────────────────────────────
+.quoteIcon {
+  font-family: $font-serif;
+  font-size: 5rem;
+  line-height: 0.6;
+  color: rgba(0, 0, 0, 0.08);
+  font-weight: 400;
+  pointer-events: none;
+  user-select: none;
+  margin-bottom: -0.5rem;
+}
+
+// ─── Review text ─────────────────────────────────────────────────────────────
+.review {
+  font-family: $font-sans;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: $color-text-secondary;
+  line-height: 1.85;
+  flex: 1;
+}
+
+// ─── Author ──────────────────────────────────────────────────────────────────
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #111111;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.name {
+  font-family: $font-sans;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $color-text-primary;
+  letter-spacing: 0.02em;
+}
+
+.role {
+  font-family: $font-sans;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: $color-text-muted;
+  letter-spacing: 0.03em;
+}
+
+// ─── Navigation ──────────────────────────────────────────────────────────────
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-primary;
+  cursor: pointer;
+  transition: background $transition-base, border-color $transition-base, transform $transition-fast;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background: #111111;
+    border-color: #111111;
+    color: #ffffff;
+    transform: scale(1.08);
+  }
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+  padding: 0;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.dotActive {
+  width: 22px;
+  border-radius: 3px;
+  background: #111111;
+}
